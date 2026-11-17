@@ -1,42 +1,12 @@
 import { useState } from "react";
 import "./App.css";
+import Sidebar from "./components/Sidebar";
+import MainWorkspace from "./components/MainWorkspace";
+import AgentActivity from "./components/AgentActivity";
 
-function Sidebar({ isOpen, onClose }) {
-    return (
-        <aside className={`sidebar ${isOpen ? "open" : ""}`}>
-            <div className="panel-header">
-                <h3>Sidebar</h3>
-                <button className="mobile-close-btn" onClick={onClose} aria-label="Close sidebar">✕</button>
-            </div>
-            <div className="panel-content">
-                <p>Sidebar navigation and links go here.</p>
-            </div>
-        </aside>
-    );
-}
 
-function MainWorkspace() {
-    return (
-        <main className="main">
-            <h2>Main Workspace</h2>
-            <p>Main content area for studying, tasks, and notes.</p>
-        </main>
-    );
-}
 
-function AgentActivity({ isOpen, onClose }) {
-    return (
-        <aside className={`activity ${isOpen ? "open" : ""}`}>
-            <div className="panel-header">
-                <h3>Agent Activity</h3>
-                <button className="mobile-close-btn" onClick={onClose} aria-label="Close activity">✕</button>
-            </div>
-            <div className="panel-content">
-                <p>Agent status, recent activities, and recommendations.</p>
-            </div>
-        </aside>
-    );
-}
+
 
 function App() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
